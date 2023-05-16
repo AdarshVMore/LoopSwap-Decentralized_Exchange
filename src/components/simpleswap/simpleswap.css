@@ -1,0 +1,35 @@
+.simple-swap {
+  background: #3240547e;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #324054;
+  min-width: 450px;
+}
+.simple-swap a {
+  color: #4a7a90;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.simple-swap a:hover {
+  color: #ffffff;
+}
+.simple-swap .top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.simple-swap .top-menu .left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 12px;
+}
+.simple-swap .top-menu .right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.simple-swap .top-menu .right .btn {
+  display: flex;
+  align-items: center;
+}

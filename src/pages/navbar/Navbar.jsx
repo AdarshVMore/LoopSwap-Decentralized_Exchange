@@ -207,6 +207,7 @@ const Navbar = () => {
         <li className="settings-button">
           <FiSettings size={24} color="#4a7a90" />
         </li>
+        <div className="dropdown-setting"></div>
       </div>
     </nav>
   );

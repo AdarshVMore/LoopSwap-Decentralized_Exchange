@@ -6,6 +6,8 @@ nav {
   max-width: 90vw;
   padding: 20px;
   width: 100vw;
+  position: absolute;
+  top: 0;
 }
 
 /* ===============================================  LEFT NAV  ================================================ */
@@ -71,6 +73,7 @@ nav {
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   color: white;
+  transition: 0.3s;
 }
 .dropdown-content2 {
   position: absolute;
@@ -79,11 +82,10 @@ nav {
   /* margin-top: 8px; */
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid #222222;
   width: auto;
   margin-top: 10px;
   filter: blur(50);
-  background-color: #32323279;
+  background-color: #000c3d79;
 }
 
 .dropdown-content2 a {
@@ -91,19 +93,21 @@ nav {
   text-decoration: none;
 }
 .links li:hover .dropdown-content {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   /* margin-top: 8px; */
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid #222222;
   width: auto;
   filter: blur(50);
-  background-color: #32323279;
+  background-color: #000c3d79;
+  transition: 0.3s;
 }
 
 .links li .dropdown-content a {
   color: white;
+  transition: 0.3s;
 }
 
 .links li .dropdown-content a:hover {
