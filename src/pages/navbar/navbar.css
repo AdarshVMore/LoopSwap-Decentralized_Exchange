@@ -9,8 +9,18 @@ nav {
   position: absolute;
   top: 0;
 }
+.noslide-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
 /* ===============================================  LEFT NAV  ================================================ */
+
+.straight-links {
+  display: none;
+}
 
 .left {
   display: flex;
@@ -66,20 +76,30 @@ nav {
 
 .dropdown-content {
   display: none;
+  /* display: flex; */
   position: absolute;
   top: 100%;
+  width: auto;
   left: 0;
   background-color: #fff;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   color: white;
   transition: 0.3s;
+  width: 500px;
+  border-radius: 15px;
+}
+
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+  /* Other styles */
+  transition-delay: 0.5s;
 }
 .dropdown-content2 {
   position: absolute;
   display: flex;
   flex-direction: column;
-  /* margin-top: 8px; */
   padding: 10px 20px;
   border-radius: 10px;
   width: auto;
@@ -102,12 +122,13 @@ nav {
   width: auto;
   filter: blur(50);
   background-color: #000c3d79;
-  transition: 0.3s;
 }
 
 .links li .dropdown-content a {
   color: white;
-  transition: 0.3s;
+  margin: 5px 0;
+  font-size: 18px;
+  width: 150px;
 }
 
 .links li .dropdown-content a:hover {
@@ -129,7 +150,7 @@ nav {
   );
   display: flex;
   align-items: center;
-  padding: 8px 20px;
+  padding: 6px 20px;
   border-radius: 10px;
   cursor: pointer;
   border: 0px;
@@ -171,7 +192,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  /* padding: 8px; */
 }
 
 .settings-icon {
@@ -187,4 +208,35 @@ nav {
 
 .isConnected p {
   color: white;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .links {
+    display: none;
+  }
+  .links ul {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  .links.show {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .hamburger {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .dissapear {
+    display: none;
+  }
 }
