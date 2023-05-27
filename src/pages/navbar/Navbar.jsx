@@ -6,7 +6,8 @@ import logo from "../../assets/logo.png";
 import Metamask from "../../assets/metamask.png";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
-
+import {BsGraphUpArrow, BsWindowDock} from 'react-icons/bs'
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [dropdownIndex, setDropdownIndex] = useState(null);
 
@@ -81,9 +82,10 @@ const Navbar = () => {
               </span>
               {dropdownIndex === 0 && (
                 <div className="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <Link to={"/"} href="#"><BsWindowDock/> &nbsp;&nbsp; Simple swap</Link>
+                  <br></br>
+                  <Link to={"/classicswap"} href="#"><BsGraphUpArrow/> &nbsp; &nbsp; Classic Swap</Link>
+                  
                 </div>
               )}
             </li>
