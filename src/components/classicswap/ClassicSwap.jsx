@@ -1,10 +1,10 @@
 import React from "react";
 import '../classicswap/classicswap.css'
 import SimpleSwap from "../simpleswap/SimpleSwap";
-import { Exchangecharts } from "./Exchangecharts";
+import  Exchangecharts  from "./Exchangecharts";
 function ClassicSwap() {
   return <div className="container">
-  <div className="left-section"style={{color:"white"}}>
+  <div className="left-section"style={{ width:"800px",color:"white"}}>
    <Exchangecharts></Exchangecharts>
   </div>
   <div className="right-section" style={{color:"white"}}>
