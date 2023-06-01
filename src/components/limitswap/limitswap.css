@@ -1,5 +1,8 @@
 .limit-swap {
   margin-top: 100px;
+  min-width: 100px;
+  width: 500px;
+  transform: translateX(-15px);
 }
 
 .limit-swap .swap-from,
@@ -9,7 +12,7 @@
   background-color: #06070a;
 }
 .limit-swap .swap-arrow {
-  top: 43%;
+  top: 30%;
 }
 
 .limit-swap .swap-to {

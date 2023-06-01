@@ -1,0 +1,242 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 10px; */
+  max-width: 90vw;
+  padding: 20px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
+.noslide-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ===============================================  LEFT NAV  ================================================ */
+
+.straight-links {
+  display: none;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 120px;
+  height: 45px;
+  margin-right: 20px;
+}
+
+.links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links li {
+  position: relative;
+  /* margin-right: 10px; */
+  color: #4a7a90;
+  font-size: 15px;
+  /* margin: 0 20px; */
+  padding: 7px 15px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.links li:hover {
+  background-color: #000c3d79;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.links li a {
+  position: relative;
+  color: #4a7a90;
+  font-size: 15px;
+  /* margin: 0 20px; */
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.links span {
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+/* =================================================  All Dropdowns  ============================================ */
+
+.dropdown-content {
+  display: none;
+  /* display: flex; */
+  position: absolute;
+  top: 100%;
+  width: auto;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: 0.3s;
+  width: 500px;
+  border-radius: 15px;
+}
+
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+  /* Other styles */
+  transition-delay: 0.5s;
+}
+.dropdown-content2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: auto;
+  margin-top: 10px;
+  filter: blur(50);
+  background-color: #000c3d79;
+}
+
+.dropdown-content2 a {
+  color: white;
+  text-decoration: none;
+}
+.links li:hover .dropdown-content {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 8px; */
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: auto;
+  filter: blur(50);
+  background-color: #000c3d79;
+}
+
+.links li .dropdown-content a {
+  color: white;
+  margin: 5px 0;
+  font-size: 18px;
+  width: 150px;
+}
+
+.links li .dropdown-content a:hover {
+  color: #4a7a90;
+}
+
+/* ===========================================================  RIGHT NAV  ============================================== */
+
+.navbar-right {
+  display: flex;
+}
+
+.connect-button {
+  background: rgb(0, 4, 119);
+  background: linear-gradient(
+    257deg,
+    rgba(0, 4, 119, 1) 0%,
+    rgba(0, 35, 255, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0px;
+  color: white;
+  margin-right: 20px;
+}
+
+.connect-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.connect-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.connect-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.connect-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 8px; */
+}
+
+.settings-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.isConnected {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.isConnected p {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .links {
+    display: none;
+  }
+  .links ul {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  .links.show {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .hamburger {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .dissapear {
+    display: none;
+  }
+}

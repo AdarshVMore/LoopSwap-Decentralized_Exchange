@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { RiAddFill } from "react-icons/ri";
-import { VscSettings } from "react-icons/vsc";
-import { TbReload } from "react-icons/tb";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import "./limitswap.css";
@@ -15,7 +13,7 @@ function LimitSwap() {
         <div className="top-menu">
           <div className="left">
             <a
-              href="/"
+              href="/dex"
               onClick={() => {
                 setSelectedLink(0);
               }}
@@ -26,7 +24,7 @@ function LimitSwap() {
               </p>{" "}
             </a>
             <a
-              href="/limitswap"
+              href="/dex/limitswap"
               onClick={() => {
                 setSelectedLink(1);
               }}
@@ -37,15 +35,12 @@ function LimitSwap() {
               </p>{" "}
             </a>
             <a
-              href="/p2pswap"
+              href="/dex/p2pswap"
               onClick={() => {
                 setSelectedLink(2);
               }}
             >
-              {" "}
-              <p className={selectedLink === 2 ? "selected-link" : ""}>
-                P2P
-              </p>{" "}
+              <p className={selectedLink === 2 ? "selected-link" : ""}>P2P</p>
             </a>
           </div>
           <div className="right">
