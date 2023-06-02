@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-gap: 20px; /* Gap between the columns */
+    flex-direction: column;
+  }
+  
+  .left-section {
+    /* Styles for the left section */
+    padding: 10px;
+  }
+  
+  .right-section {
+    /* Styles for the right section */
+  }
+  .chart-container {
+    background-color: lightblue;
+    padding: 20px;
+  }

@@ -1,0 +1,81 @@
+.limit-swap {
+  margin-top: 100px;
+  min-width: 100px;
+  width: 500px;
+  transform: translateX(-15px);
+}
+
+.limit-swap .swap-from,
+.limit-swap .swap-to,
+.limit-swap .third-right,
+.limit-swap .third-left {
+  background-color: #06070a;
+}
+.limit-swap .swap-arrow {
+  top: 30%;
+}
+
+.limit-swap .swap-to {
+  border: none;
+}
+
+.limit-swap .third {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  justify-content: space-between;
+}
+
+.limit-swap .third-left {
+  padding: 15px;
+  color: white;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.limit-swap .third-left .top {
+  display: flex;
+  color: #6c86a3;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.limit-swap .third-left .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.limit-swap .third-right {
+  color: #6c86a3;
+  padding: 15px;
+  border-radius: 10px;
+}
+.limit-swap .third-right p {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.limit-swap .third-right select {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  outline: none;
+}
+.limit-swap .third-right option {
+  /* text-align: right; */
+  background-color: #1e2633;
+  border: none;
+  outline: none;
+  width: 100px;
+  font-size: 15px;
+  padding: 15px;
+}
+.limit-swap .swap-button1 button {
+  background-color: #0ca8df;
+  color: white;
+}

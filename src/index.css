@@ -1,16 +1,20 @@
-:root {
-  --bg-color: linear-gradient(
-    339deg,
-    rgb(22, 0, 119) 0%,
-    rgb(0, 0, 57) 15%,
-    rgb(0, 3, 27) 51%,
-    rgb(0, 14, 22) 86%,
-    rgb(0, 14, 28) 100%
-  );
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: #000000;
+  color: white;
+  overflow-x: hidden;
 }
 
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  box-sizing: border-box;
+.days-one {
+  font-family: "Days One", sans-serif;
+}
+.gray {
+  color: gray;
+}
+html {
+  scroll-behavior: smooth;
 }

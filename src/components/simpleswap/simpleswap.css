@@ -1,10 +1,20 @@
 .simple-swap {
-  background: #3240547e;
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #324054;
-  min-width: 450px;
+  background: #131823;
+  padding: 15px;;
+  min-width: 100px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 20px;
 }
+.logo1 {
+  width: 25px;
+  height: 25px;
+  margin-left: 0px;
+}
+
+/* ========================================  Swapping Nav  =================================== */
 .simple-swap a {
   color: #4a7a90;
   text-decoration: none;
@@ -32,4 +42,132 @@
 .simple-swap .top-menu .right .btn {
   display: flex;
   align-items: center;
+  border-radius: 10px;
+  padding: 3px;
+  transition: 0.3s ease-in-out;
+}
+.simple-swap .top-menu .right .btn:hover {
+  background-color: #44556c;
+  cursor: pointer;
+}
+
+.selected-link {
+  color: white;
+}
+
+/* =============================  SWAPPING INPUTS  ========================== */
+
+.swaping-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.swaping-input .swap-from {
+  background-color: #0c1119;
+  /* padding: 15px; */
+  border-radius: 10px;
+}
+.swaping-input .swap-from .top,
+.swaping-input .swap-to .top {
+  display: flex;
+  color: #637ca0;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 15px 15px 0 15px;
+}
+
+.swaping-input .swap-from .middle,
+.swaping-input .swap-to .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  color: white;
+  padding: 3px 15px 0 10px;
+}
+
+.swaping-input .swap-from .middle button,
+.swaping-input .swap-to .middle button {
+  padding: 3px 7px;
+  background-color: transparent;
+  font-size: 23px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.swaping-input .swap-from .middle button:hover {
+  background-color: #131823;
+  transition: 0.3s;
+}
+
+.swap-from .bottom,
+.swap-to .bottom {
+  display: flex;
+  color: #637ca0;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 0px 15px 15px 15px;
+}
+
+.swaping-input .swap-to {
+  /* background-color: transparent; */
+  border-radius: 10px;
+  border: 1px solid #637ca077;
+}
+
+.swaping-input .swap-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 49%;
+  top: 42%;
+  z-index: 5;
+  background-color: #324054;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+}
+
+/* =================================  LIVE CRYPTO PRICE   ================================== */
+
+.live-crypto-price {
+  background-color: #0c1119;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 15px;
+  gap: 5px;
+}
+.live-crypto-price .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ==================================   SWAP BTN  ================================ */
+
+.simple-swap .swap-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.simple-swap .swap-button button {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 15px;
+  background-color: #324054;
+  border: none;
+  color: #6983aa;
+  font-size: 15px;
+  font-weight: 500;
 }
