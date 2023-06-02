@@ -33,6 +33,8 @@ const Navbar = () => {
       console.error("Error connecting to Metamask:", error);
     }
   };
+  
+  const [data, setData] = useState("false");
 
   const toggelDropdown = () => {
     setIsConnectOpen(!isConnectOpen);
@@ -46,6 +48,17 @@ const Navbar = () => {
     setDropdownIndex(null);
   };
 
+  const handleButtonClick = () => {
+    sessionStorage.setItem('key',data);
+    setData("false");
+  };
+
+  
+  const handleClearButtonClick = () => {
+    // Remove value from session storage
+    sessionStorage.removeItem('key',data);
+    setData(true);
+  };
   const connectLinks = [
     {
       name: "Link 1",
@@ -83,11 +96,11 @@ const Navbar = () => {
               </span>
               {dropdownIndex === 0 && (
                 <div className="dropdown-content">
-                  <a href="/dex"><BsWindowDock/> &nbsp;&nbsp; Simple swap </a>
+                  <a href="/dex" onClick={handleClearButtonClick}><BsWindowDock/> &nbsp;&nbsp; Simple swap </a>
                   {/* <Link to={"/"} href="#"><BsWindowDock/> &nbsp;&nbsp; Simple swap</Link>
                   <br></br> */}
                   {/* <Link to={"/classicswap"} href="#"><BsGraphUpArrow/> &nbsp; &nbsp; Classic Swap</Link> */}
-                  <a href="/dex/classicswap"> <BsGraphUpArrow/> &nbsp; Classic Swap</a>
+                  <a href="/dex/classicswap"  onClick={handleButtonClick}> <BsGraphUpArrow/> &nbsp; Classic Swap</a>
                   <a href="#">Link 3</a>
                 </div>
               )}
