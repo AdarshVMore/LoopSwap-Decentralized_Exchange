@@ -6,7 +6,11 @@ import logo from "../../../assets/images/logo.png";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
 import {BsGraphUpArrow, BsWindowDock} from 'react-icons/bs'
+<<<<<<<< HEAD:src/pages/dex/navbar/Navbar.jsx
 
+========
+import { Link } from "react-router-dom";
+>>>>>>>> 8542ca42c762ddc4759aae344905e9861c11c878:src/pages/navbar/Navbar.jsx
 const Navbar = () => {
   const [dropdownIndex, setDropdownIndex] = useState(null);
 
@@ -83,12 +87,19 @@ const Navbar = () => {
               </span>
               {dropdownIndex === 0 && (
                 <div className="dropdown-content">
+<<<<<<<< HEAD:src/pages/dex/navbar/Navbar.jsx
                   <a href="/dex"><BsWindowDock/> &nbsp;&nbsp; Simple swap </a>
                   {/* <Link to={"/"} href="#"><BsWindowDock/> &nbsp;&nbsp; Simple swap</Link>
                   <br></br> */}
                   {/* <Link to={"/classicswap"} href="#"><BsGraphUpArrow/> &nbsp; &nbsp; Classic Swap</Link> */}
                   <a href="/dex/classicswap"> <BsGraphUpArrow/> &nbsp; Classic Swap</a>
                   <a href="#">Link 3</a>
+========
+                  <Link to={"/"} href="#"><BsWindowDock/> &nbsp;&nbsp; Simple swap</Link>
+                  <br></br>
+                  <Link to={"/classicswap"} href="#"><BsGraphUpArrow/> &nbsp; &nbsp; Classic Swap</Link>
+                  
+>>>>>>>> 8542ca42c762ddc4759aae344905e9861c11c878:src/pages/navbar/Navbar.jsx
                 </div>
               )}
             </li>
