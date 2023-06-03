@@ -9,15 +9,18 @@ ChartJS.register(
 )
 
 function Exchangecharts({ selectedToken }) {
+  
   const [priceHistory, setPriceHistory] = useState([]);
   const [timeRange, setTimeRange] = useState("30"); // Default time range is 30 days
   var text = selectedToken ? selectedToken.symbol: "None";
-  console.log(text.toLowerCase())
+  console.log(selectedToken)
   useEffect(() => {
+  
     const fetchPriceHistory = async () => {
       try {
         const response = await axios.get(
-          `https://api.coingecko.com/api/v3/coins/${text.toLowerCase()}/market_chart?vs_currency=usd&days=${timeRange}`
+          // `https://api.coingecko.com/api/v3/coins/${text.toLowerCase()}/market_chart?vs_currency=usd&days=${timeRange}`
+          `https://api.coingecko.com/api/v3/coins/ethereum/contract/${selectedToken.address}/market_chart?vs_currency=usd&days=${timeRange}`
         );
         const { prices } = response.data;
         setPriceHistory(prices);
@@ -27,7 +30,7 @@ function Exchangecharts({ selectedToken }) {
     };
 
     fetchPriceHistory();
-  }, [timeRange]);
+  },[selectedToken,timeRange]);
 
   const handleTimeRangeChange = (event) => {
     setTimeRange(event.target.value);

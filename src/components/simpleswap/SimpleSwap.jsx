@@ -61,7 +61,11 @@ const selectTheme = (theme) => ({
   }),
 });
 
-
+const [amount,setamount]=useState('')
+//  var [data,setData] = useState("");
+var storedData = sessionStorage.getItem('key');
+    //  setData(storedData);
+console.log(storedData)
 
  
 const options = tokenlist.slice(0,500).map((token) => ({
@@ -93,7 +97,7 @@ const options2 = tokenlist.slice(0,500).map((token) => ({
 const [swap2,setswap2]=useState(null)
 const setevent2 = (props) => {
     setswap2(props);
-    if (props != null && props.s != null) {
+    if (props != null && props.s != null && storedData==="false") {
       onTokenSelect(props.s); // Call the onTokenSelect callback with the selected token
     }
   };
@@ -120,7 +124,7 @@ setamount(props.target.value);
 
 }
 
-const [amount,setamount]=useState('')
+
 
   return (
     <div className="simple-swap">

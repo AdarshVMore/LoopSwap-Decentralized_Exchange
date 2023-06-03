@@ -6,7 +6,12 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Nav = () => {
   const [showNavbar, setShowNavbar] = useState(false);
-
+  const [data, setData] = useState("false");
+  const handleClearButtonClick = () => {
+    // Remove value from session storage
+    sessionStorage.removeItem('key',data);
+    setData(true);
+  };
   return (
     <nav className="navbar">
       <div className="logo">
@@ -41,7 +46,7 @@ const Nav = () => {
           <a href="#tokonomics">Tokonomics</a>
         </li>
         <li>
-          <a href="/dex">LoopSwap</a>
+          <a href="/dex" onClick={handleClearButtonClick}>LoopSwap</a>
         </li>
         <li>
           <a href="#">Loop Network</a>
