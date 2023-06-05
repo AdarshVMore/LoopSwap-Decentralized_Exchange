@@ -55,12 +55,13 @@ function Exchangecharts({ selectedToken }) {
     <h1>Token Price History</h1>
     <div>
       <label htmlFor="timeRange">Time Range:</label>
-      <select id="timeRange" value={timeRange} onChange={handleTimeRangeChange}>
+      &nbsp;
+      <select style={{background:"black" ,color:"white"}} id="timeRange" value={timeRange} onChange={handleTimeRangeChange}>
         <option value="30">30 Days</option>
         <option value="90">90 Days</option>
         <option value="180">180 Days</option>
         <option value="365">1 Year</option>
-        <option value="all">All Time</option>
+     
       </select>
     </div>
     <Line data={chartData} />

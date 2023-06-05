@@ -3,12 +3,15 @@ import { RiAddFill } from "react-icons/ri";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import "./limitswap.css";
+import { Link } from "react-router-dom";
 
 function LimitSwap() {
   const [selectedLink, setSelectedLink] = useState(1);
-
+    
   return (
-    <div className="limit-swap">
+    <>
+    <div><Link to="/dex">Comming Soon ....<span style={{color:"lightblue"}}>Click here for Home</span></Link></div>
+    <div style={{filter:"blur(4px)"}} className="limit-swap">
       <div className="simple-swap">
         <div className="top-menu">
           <div className="left">
@@ -137,6 +140,7 @@ function LimitSwap() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

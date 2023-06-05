@@ -202,7 +202,7 @@ setamount(props.target.value);
           </div>
 
           <div className="bottom">
-            <p className="crypto-fullname">Wrapper Ethereum</p>
+            <p className="crypto-fullname"></p>
             <p className="some-value">~$3 309 059</p>
           </div>
         </div>
@@ -228,7 +228,7 @@ setamount(props.target.value);
             <p>{totoken}</p>
           </div>
           <div className="bottom">
-            <p className="crypto-fullname">Wrapper Ethereum</p>
+            <p className="crypto-fullname">{}</p>
             <p className="some-value">~$3 309 059</p>
           </div>
         </div>
