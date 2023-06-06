@@ -1,6 +1,6 @@
 .simple-swap {
   background: #131823;
-  padding: 15px;;
+  padding: 15px;
   min-width: 100px;
   width: 500px;
   display: flex;
@@ -170,4 +170,25 @@
   color: #6983aa;
   font-size: 15px;
   font-weight: 500;
+}
+
+.info {
+  width: 100%;
+}
+
+.info p {
+  text-align: center;
+  margin-left: 49%;
+}
+
+button {
+  border: none;
+  text-align: center;
+}
+
+.middle-select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
 }

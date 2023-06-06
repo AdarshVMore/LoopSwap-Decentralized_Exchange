@@ -1,12 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { RiAddFill } from "react-icons/ri";
 import { VscSettings } from "react-icons/vsc";
 import { TbReload } from "react-icons/tb";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import "./simpleswap.css";
-import axios from 'axios';
-import Select from 'react-select';
+import axios from "axios";
+import Select from "react-select";
 
 function SimpleSwap({ onTokenSelect }) {
   const [selectedLink, setSelectedLink] = useState(0);
@@ -14,117 +14,126 @@ function SimpleSwap({ onTokenSelect }) {
   const selectStyles = {
     container: (provided) => ({
       ...provided,
-    
-    backgroundColor: '#131823', }),
+
+      backgroundColor: "#131823",
+    }),
     control: (provided) => ({
       ...provided,
-      background:'#131823',
-      backgroundColor: '#131823', // Change the background color
-      color: 'white', // Change the text color
+      background: "#131823",
+      backgroundColor: "#131823", // Change the background color
+      color: "white", // Change the text color
     }),
   };
 
-  
-    const [tokens, setTokens] = useState({});
-    const [tokenlist, setTokenlist] = useState([]);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get('https://api.1inch.io/v5.0/1/tokens');
-          setTokens(response.data.tokens);
-          console.log(tokens);
-        } catch (error) {
-          console.log('Error fetching token data:', error);
-        }
-      };
-      exchange()
-      fetchData();
-    }, []);
+  const [tokens, setTokens] = useState({});
+  const [tokenlist, setTokenlist] = useState([]);
 
- const[swap,setswap]=useState(null)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://api.1inch.io/v5.0/1/tokens");
+        setTokens(response.data.tokens);
+        console.log(tokens);
+      } catch (error) {
+        console.log("Error fetching token data:", error);
+      }
+    };
+    exchange();
+    fetchData();
+  }, []);
 
-// Accessing individual token information dynamically
-Object.keys(tokens).forEach((tokenAddress) => {
-  const token = tokens[tokenAddress];
-  tokenlist.push(token);
-});
-const selectTheme = (theme) => ({
-  ...theme,
-  colors: {
-    ...theme.colors,
-    primary: 'black', // Set the background color of the select component
-  },
-  option: (provided) => ({
-    ...provided,
-    backgroundColor: 'black', // Set the background color of options to black
-  }),
-});
+  const [swap, setswap] = useState(null);
 
-const [amount,setamount]=useState('')
-//  var [data,setData] = useState("");
-var storedData = sessionStorage.getItem('key');
-    //  setData(storedData);
-console.log(storedData)
+  // Accessing individual token information dynamically
+  Object.keys(tokens).forEach((tokenAddress) => {
+    const token = tokens[tokenAddress];
+    tokenlist.push(token);
+  });
+  const selectTheme = (theme) => ({
+    ...theme,
+    colors: {
+      ...theme.colors,
+      primary: "black", // Set the background color of the select component
+    },
+    option: (provided) => ({
+      ...provided,
+      backgroundColor: "black", // Set the background color of options to black
+    }),
+  });
 
- 
-const options = tokenlist.slice(0,500).map((token) => ({
-  value: token.address,
-  
-  label: (
-    // <div style={{backgroundColor:"#131823", }}>
-      <div style={{backgroundColor:"#131823",color:"white","border-radius":"5px"}}>
-        
-      <img src={token.logoURI} alt={token.name} className="logo1" ></img>
-       <p key={token.address}>{token.symbol}</p>
+  const [amount, setamount] = useState("");
+  //  var [data,setData] = useState("");
+  var storedData = sessionStorage.getItem("key");
+  //  setData(storedData);
+  console.log(storedData);
+
+  const options = tokenlist.slice(0, 500).map((token) => ({
+    value: token.address,
+
+    label: (
+      // <div style={{backgroundColor:"#131823", }}>
+      <div
+        style={{
+          backgroundColor: "#131823",
+          color: "white",
+          "border-radius": "5px",
+        }}
+      >
+        <img src={token.logoURI} alt={token.name} className="logo1"></img>
+        <p key={token.address}>{token.symbol}</p>
       </div>
-    // </div>
-  ),
-}));
-const options2 = tokenlist.slice(0,500).map((token) => ({
-  value: token.address,
-  s:token,
-  label: (
-    // <div style={{backgroundColor:"#131823", }}>
-      <div style={{backgroundColor:"#131823",color:"white","border-radius":"5px"}}>
-        
-      <img src={token.logoURI} alt={token.name} className="logo1" ></img>
-       <p key={token.address}>{token.symbol}</p>
+      // </div>
+    ),
+  }));
+  const options2 = tokenlist.slice(0, 500).map((token) => ({
+    value: token.address,
+    s: token,
+    label: (
+      // <div style={{backgroundColor:"#131823", }}>
+      <div
+        style={{
+          backgroundColor: "#131823",
+          color: "white",
+          "border-radius": "5px",
+        }}
+      >
+        <img src={token.logoURI} alt={token.name} className="logo1"></img>
+        <p key={token.address}>{token.symbol}</p>
       </div>
-    // </div>
-  ),
-}));
-const [swap2,setswap2]=useState(null)
-const setevent2 = (props) => {
+      // </div>
+    ),
+  }));
+  const [swap2, setswap2] = useState(null);
+  const setevent2 = (props) => {
     setswap2(props);
-    if (props != null && props.s != null && storedData==="false") {
+    if (props != null && props.s != null && storedData === "false") {
       onTokenSelect(props.s); // Call the onTokenSelect callback with the selected token
     }
   };
-const setevent=(props)=>{
-  setswap(props)
-}
- var k='';
- var j=''
- const [fromtoken,setfromtoken]=useState(j)
- const [totoken,settoken]=useState(k)
- var exchange=async(fromaddress, toaddress,amount)=>{
- await axios.get(`https://api.1inch.io/v5.0/1/quote?fromTokenAddress=${fromaddress}&toTokenAddress=${toaddress}&amount=${amount}`).then((response)=>{k=response.data["toTokenAmount"]
- j=response.data["fromTokenAmount"]
- settoken(k)
- setfromtoken(j)
- console.log(k,response.data);
-
-
-}).catch(err=>console.log(err))
-    
-}
-const setevent3=(props)=>{
-setamount(props.target.value);
-
-}
-
-
+  const setevent = (props) => {
+    setswap(props);
+  };
+  var k = "";
+  var j = "";
+  const [fromtoken, setfromtoken] = useState(j);
+  const [totoken, settoken] = useState(k);
+  var exchange = async (fromaddress, toaddress, amount) => {
+    await axios
+      .get(
+        `https://api.1inch.io/v5.0/1/quote?fromTokenAddress=${fromaddress}&toTokenAddress=${toaddress}&amount=${amount}`
+      )
+      .then((response) => {
+        k = response.data["toTokenAmount"];
+        j = response.data["fromTokenAmount"];
+        settoken(k);
+        setfromtoken(j);
+        console.log(k, response.data);
+      })
+      .catch((err) => console.log(err));
+  };
+  const setevent3 = (props) => {
+    setamount(props.target.value);
+  };
 
   return (
     <div className="simple-swap">
@@ -186,18 +195,36 @@ setamount(props.target.value);
             </p>
           </div>
           <div className="middle">
-            
-            
-              {/* <select className="crypto-icon">
+            {/* <select className="crypto-icon">
                <span className="crypto-icon"></span>
               <span className="crypto-name">
                 WETH <RiArrowDropDownLine />
               </span> 
                {otag}
             </select> */}
-             <Select value={swap} name="fromtoken" className="middle"  onChange={setevent} options={options} styles={selectStyles} theme={selectTheme} />
-         
-            <input text={Number} onChange={setevent3} value={amount} style={{"placeholder":"white",backgroundColor:"#131823", "border-radius":"10px",color:"white"}} placeholder="Enter Exchanged coins" required={true}></input>
+            <Select
+              value={swap}
+              name="fromtoken"
+              className="middle"
+              onChange={setevent}
+              options={options}
+              styles={selectStyles}
+              theme={selectTheme}
+            />
+
+            <input
+              text={Number}
+              onChange={setevent3}
+              value={amount}
+              style={{
+                placeholder: "white",
+                backgroundColor: "#131823",
+                "border-radius": "10px",
+                color: "white",
+              }}
+              placeholder="Enter Exchanged coins"
+              required={true}
+            ></input>
             <p>{fromtoken}</p>
           </div>
 
@@ -223,8 +250,15 @@ setamount(props.target.value);
                 WETH <RiArrowDropDownLine />
               </span>
             </button> */}
-            <Select  value={swap2} className="middle"  onChange={setevent2 } options={options2} styles={selectStyles} theme={selectTheme}  />
-         
+            <Select
+              value={swap2}
+              className="middle"
+              onChange={setevent2}
+              options={options2}
+              styles={selectStyles}
+              theme={selectTheme}
+            />
+
             <p>{totoken}</p>
           </div>
           <div className="bottom">
@@ -233,12 +267,16 @@ setamount(props.target.value);
           </div>
         </div>
       </div>
-      <button onClick={()=>{exchange(swap.value,swap2.value,amount)}} className="live-crypto-price">
+      <button
+        onClick={() => {
+          exchange(swap.value, swap2.value, amount);
+        }}
+        className="live-crypto-price"
+      >
         <div className="info">
-          <p  style={{textAlign:"center"}}>Convert</p>
+          <p style={{ textAlign: "center" }}>Convert</p>
           <p></p>
         </div>
-     
       </button>
       <div className="swap-button">
         <button>Insufficient WETH Balance</button>
