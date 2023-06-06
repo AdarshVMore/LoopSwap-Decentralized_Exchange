@@ -6,6 +6,7 @@ import ClassicSwap from "../../components/classicswap/ClassicSwap";
 import LimitSwap from "../../components/limitswap/LimitSwap";
 import P2PSwap from "../../components/p2pswap/P2PSwap";
 import Navbar from "../navbar/Navbar";
+import Staking from "../../Dao/Staking";
 function MainContainer() {
   return (
     <div className="MainContainer">
@@ -14,8 +15,9 @@ function MainContainer() {
         <Routes>
           <Route path="/" element={<SimpleSwap />} />
           <Route path="/classicswap" element={<ClassicSwap />} />
-          <Route path="/limitswap" element={<LimitSwap />} />
+       
           <Route path="/p2pswap" element={<P2PSwap />} />
+          <Route path="/staking" element={<Staking/>}/>
         </Routes>
       </BrowserRouter>
     </div>
